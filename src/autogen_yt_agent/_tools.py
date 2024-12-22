@@ -24,7 +24,7 @@ def download_youtube_video(url: str, output_path: str) -> str:
     :param output_path: Path to save the downloaded video.
     :return: Confirmation message with the path to the saved video file.
     """
-    ydl_opts = {"outtmpl": output_path, "format": "best"}
+    ydl_opts = {"outtmpl": output_path, "format": "best", "writeinfojson": ".info.json" }
 
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
